@@ -33,9 +33,13 @@ jobs:
           pkg-manager: pip
           # app-dir: ~/project/package-directory/  # If your requirements.txt isn't in the root directory.
           # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
+
       - run: 
           name: install required
           command: pip install flask, flask_mysqldb, flask_session, requests
+      - run:
+          name: requireents.txt
+          command: pip freeze > requirements.txt
       - run:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
