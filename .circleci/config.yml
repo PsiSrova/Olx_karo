@@ -41,6 +41,9 @@ jobs:
           name: requireents.txt
           command: pip freeze > requirements.txt
       - run:
+          name: install
+          command: pip install -r requirements.txt  
+      - run:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
           command: python -m unittest discover 
